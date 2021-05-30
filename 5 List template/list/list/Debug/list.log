@@ -1,0 +1,3 @@
+﻿  Source.cpp
+D:\My\University\ООП\5 Лаба\list\list\Source.cpp(509,1): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
+  list.vcxproj -> D:\My\University\ООП\5 Лаба\list\Debug\list.exe

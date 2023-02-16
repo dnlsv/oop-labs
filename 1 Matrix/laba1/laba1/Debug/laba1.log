@@ -1,5 +1,0 @@
-﻿  Functions.cpp
-  Main.cpp
-d:\my\универ\ооп\1 лаба\laba1\laba1\main.cpp(6): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-  Создание кода...
-  laba1.vcxproj -> D:\My\Универ\ООП\1 Лаба\laba1\Debug\laba1.exe

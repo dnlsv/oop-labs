@@ -9,14 +9,14 @@ template <class T>
 class Interface
 {
 private:
-	T element;
+    T element;
 public:
-	Interface() {}; //конструктор без параметров
-	~Interface() {}; //деструктор без параметров
-	void menu(); //меню выбора данных для работы с ними
-	void fun(List<T>& obj); //меню работы с данными выбранного типа
-	void addElement(List<T>& obj); //добавление элемента
-	void deleteElement(List<T>& obj); //удаление елемента
-	void viewElements(List<T>& obj); //просмотр таблицы элементов
-	void editElement(List<T>& obj); //редактирование елемента
+    Interface() {}; //РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ Р±РµР· РїР°СЂР°РјРµС‚СЂРѕРІ
+    ~Interface() {}; //РґРµСЃС‚СЂСѓРєС‚РѕСЂ Р±РµР· РїР°СЂР°РјРµС‚СЂРѕРІ
+    void menu(); //РјРµРЅСЋ РІС‹Р±РѕСЂР° РґР°РЅРЅС‹С… РґР»СЏ СЂР°Р±РѕС‚С‹ СЃ РЅРёРјРё
+    void fun(List<T>& obj); //РјРµРЅСЋ СЂР°Р±РѕС‚С‹ СЃ РґР°РЅРЅС‹РјРё РІС‹Р±СЂР°РЅРЅРѕРіРѕ С‚РёРїР°
+    void addElement(List<T>& obj); //РґРѕР±Р°РІР»РµРЅРёРµ СЌР»РµРјРµРЅС‚Р°
+    void deleteElement(List<T>& obj); //СѓРґР°Р»РµРЅРёРµ РµР»РµРјРµРЅС‚Р°
+    void viewElements(List<T>& obj); //РїСЂРѕСЃРјРѕС‚СЂ С‚Р°Р±Р»РёС†С‹ СЌР»РµРјРµРЅС‚РѕРІ
+    void editElement(List<T>& obj); //СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёРµ РµР»РµРјРµРЅС‚Р°
 };

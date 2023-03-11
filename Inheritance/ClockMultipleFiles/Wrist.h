@@ -5,108 +5,98 @@
 class Wrist : public Mechanical
 {
 private:
-	char* materialrem; //ìàòåðèàë ðåìåøêà
-	bool water; //âîäîçàùèòà
+    char* materialrem; //Ð¼Ð°Ñ‚ÐµÑ€Ð¸Ð°Ð» Ñ€ÐµÐ¼ÐµÑˆÐºÐ°
+    bool water; //Ð²Ð¾Ð´Ð¾Ð·Ð°Ñ‰Ð¸Ñ‚Ð°
 public:
-	Wrist();
-	~Wrist();
-	void set_materialrem(char*);
-	char* get_materialrem();
-	void set_water(bool);
-	bool get_water();
-	void input_wrist();
-	void view_wrist();
-	friend istream& operator >> (istream& in, Wrist& w)
-	{
-		cout << "Ââåäèòå" << endl << "Ïðîèçâîäèòåëÿ: ";
-		in >> w.producer;
-		cout << "Ìàòåðèàë: ";
-		in >> w.material;
-		cout << "Öåíó: ";
-		in >> w.cost;
-		cout << "Òèï öèôåðáëàòà: ";
-		in >> w.face;
-		cout << "Òèï ñòåêëà: ";
-		in >> w.glass;
-		cout << "Ìàòåðèàë ðåìåøêà: ";
-		in >> w.materialrem;
-		cout << "Âîäîçàùèòà (1 - Åñòü, 0 - Íåò): ";
-		in >> w.water;
-		cout << endl;
-		return in;
-	}
-	friend ostream& operator << (ostream& out, Wrist& w)
-	{
-		out << setw(15) << w.producer << setw(10) << w.material << setw(6) << w.cost
-			<< setw(16) << w.face << setw(12) << w.glass << setw(19) << w.materialrem
-			<< setw(12) << w.water << endl;
-		return out;
-	}
+    Wrist();
+    ~Wrist();
+    void set_materialrem(char*);
+    char* get_materialrem();
+    void set_water(bool);
+    bool get_water();
+    void input_wrist();
+    void view_wrist();
+    friend istream& operator >> (istream& in, Wrist& w)
+    {
+        cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ" << endl << "ÐŸÑ€Ð¾Ð¸Ð·Ð²Ð¾Ð´Ð¸Ñ‚ÐµÐ»Ñ: ";
+        in >> w.producer;
+        cout << "ÐœÐ°Ñ‚ÐµÑ€Ð¸Ð°Ð»: ";
+        in >> w.material;
+        cout << "Ð¦ÐµÐ½Ñƒ: ";
+        in >> w.cost;
+        cout << "Ð¢Ð¸Ð¿ Ñ†Ð¸Ñ„ÐµÑ€Ð±Ð»Ð°Ñ‚Ð°: ";
+        in >> w.face;
+        cout << "Ð¢Ð¸Ð¿ ÑÑ‚ÐµÐºÐ»Ð°: ";
+        in >> w.glass;
+        cout << "ÐœÐ°Ñ‚ÐµÑ€Ð¸Ð°Ð» Ñ€ÐµÐ¼ÐµÑˆÐºÐ°: ";
+        in >> w.materialrem;
+        cout << "Ð’Ð¾Ð´Ð¾Ð·Ð°Ñ‰Ð¸Ñ‚Ð° (1 - Ð•ÑÑ‚ÑŒ, 0 - ÐÐµÑ‚): ";
+        in >> w.water;
+        cout << endl;
+        return in;
+    }
+    friend ostream& operator << (ostream& out, Wrist& w)
+    {
+        out << setw(15) << w.producer << setw(10) << w.material << setw(6) << w.cost
+            << setw(16) << w.face << setw(12) << w.glass << setw(19) << w.materialrem
+            << setw(12) << w.water << endl;
+        return out;
+    }
 };
 
 Wrist::Wrist()
 {
-	materialrem = new char[N];
-	water = 0;
+    materialrem = new char[N];
+    water = 0;
 }
 
 Wrist::	~Wrist()
 {
-	delete[] materialrem;
+    delete[] materialrem;
 }
 
 void Wrist::set_materialrem(char* buf)
 {
-	strcpy_s(materialrem, N, buf);
+    strcpy_s(materialrem, N, buf);
 }
 
 char* Wrist::get_materialrem()
 {
-	return materialrem;
+    return materialrem;
 }
 
 void Wrist::set_water(bool buf)
 {
-	buf = water;
+    buf = water;
 }
 
 bool Wrist::get_water()
 {
-	return water;
+    return water;
 }
 
 void Wrist::input_wrist()
 {
-	cout << "Ââåäèòå" << endl << "Ïðîèçâîäèòåëÿ: ";
-	cin >> producer;
-	cout << "Ìàòåðèàë: ";
-	cin >> material;
-	cout << "Öåíó: ";
-	cin >> cost;
-	cout << "Òèï öèôåðáëàòà: ";
-	cin >> face;
-	cout << "Òèï ñòåêëà: ";
-	cin >> glass;
-	cout << "Ìàòåðèàë ðåìåøêà: ";
-	cin >> materialrem;
-	cout << "Âîäîçàùèòà (1 - Åñòü, 0 - Íåò): ";
-	cin >> water;
-	cout << endl;
+    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ" << endl << "ÐŸÑ€Ð¾Ð¸Ð·Ð²Ð¾Ð´Ð¸Ñ‚ÐµÐ»Ñ: ";
+    cin >> producer;
+    cout << "ÐœÐ°Ñ‚ÐµÑ€Ð¸Ð°Ð»: ";
+    cin >> material;
+    cout << "Ð¦ÐµÐ½Ñƒ: ";
+    cin >> cost;
+    cout << "Ð¢Ð¸Ð¿ Ñ†Ð¸Ñ„ÐµÑ€Ð±Ð»Ð°Ñ‚Ð°: ";
+    cin >> face;
+    cout << "Ð¢Ð¸Ð¿ ÑÑ‚ÐµÐºÐ»Ð°: ";
+    cin >> glass;
+    cout << "ÐœÐ°Ñ‚ÐµÑ€Ð¸Ð°Ð» Ñ€ÐµÐ¼ÐµÑˆÐºÐ°: ";
+    cin >> materialrem;
+    cout << "Ð’Ð¾Ð´Ð¾Ð·Ð°Ñ‰Ð¸Ñ‚Ð° (1 - Ð•ÑÑ‚ÑŒ, 0 - ÐÐµÑ‚): ";
+    cin >> water;
+    cout << endl;
 }
 
 void Wrist::view_wrist()
 {
-	cout << setw(15) << producer << setw(10) << material << setw(6) << cost
-		<< setw(16) << face << setw(12) << glass << setw(19) << materialrem 
-		<< setw(12) << water << endl;
+    cout << setw(15) << producer << setw(10) << material << setw(6) << cost
+        << setw(16) << face << setw(12) << glass << setw(19) << materialrem
+        << setw(12) << water << endl;
 }
-
-
-
-
-
-
-
-
-
-

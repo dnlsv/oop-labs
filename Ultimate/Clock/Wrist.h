@@ -5,8 +5,8 @@
 class Wrist : public Mechanical
 {
 private:
-	char materialrem[RESERVESIZE]; //материал ремешка
-	bool water; //водозащита
+	char materialrem[RESERVESIZE]; //РјР°С‚РµСЂРёР°Р» СЂРµРјРµС€РєР°
+	bool water; //РІРѕРґРѕР·Р°С‰РёС‚Р°
 public:
 	Wrist();
 	~Wrist();

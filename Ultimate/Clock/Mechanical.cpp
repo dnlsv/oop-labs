@@ -41,16 +41,16 @@ ostream& operator <<(ostream& out, Mechanical& obj)
 istream& operator >> (istream& in, Mechanical& obj)
 {
 	in >> dynamic_cast<Clock&>(obj);
-	cout << "Òèï öèôåðáëàòà: ";
+	cout << "Ð¢Ð¸Ð¿ Ñ†Ð¸Ñ„ÐµÑ€Ð±Ð»Ð°Ñ‚Ð°: ";
 	in >> obj.face;
-	cout << "Òèï ñòåêëà: ";
+	cout << "Ð¢Ð¸Ð¿ ÑÑ‚ÐµÐºÐ»Ð°: ";
 	in >> obj.glass;
 	return in;
 }
 
 void Mechanical::tableCap()
 {
-	cout << setw(15) << "Ïðîèçâîäèòåëü" << setw(10) << "Ìàòåðèàë" << setw(6) << "Öåíà"
-		<< setw(16) << "Òèï öèôåðáëàòà" << setw(12) << "Òèï ñòåêëà" << setw(13) << "Ôîðìà ÷àñîâ"
-		<< setw(14) << "Öåíà äåëåíèÿ öèôåðáëàòà" << endl;
+	cout << setw(15) << "ÐŸÑ€Ð¾Ð¸Ð·Ð²Ð¾Ð´Ð¸Ñ‚ÐµÐ»ÑŒ" << setw(10) << "ÐœÐ°Ñ‚ÐµÑ€Ð¸Ð°Ð»" << setw(6) << "Ð¦ÐµÐ½Ð°"
+		<< setw(16) << "Ð¢Ð¸Ð¿ Ñ†Ð¸Ñ„ÐµÑ€Ð±Ð»Ð°Ñ‚Ð°" << setw(12) << "Ð¢Ð¸Ð¿ ÑÑ‚ÐµÐºÐ»Ð°" << setw(13) << "Ð¤Ð¾Ñ€Ð¼Ð° Ñ‡Ð°ÑÐ¾Ð²"
+		<< setw(14) << "Ð¦ÐµÐ½Ð° Ð´ÐµÐ»ÐµÐ½Ð¸Ñ Ñ†Ð¸Ñ„ÐµÑ€Ð±Ð»Ð°Ñ‚Ð°" << endl;
 }

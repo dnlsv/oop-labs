@@ -6,7 +6,7 @@ using namespace std;
 
 int main()
 {
-	setlocale(LC_ALL, "rus");
+	setlocale(LC_ALL, ".UTF8");
 
 	Interface<int> obj;
 	obj.menu();

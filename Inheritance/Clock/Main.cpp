@@ -2,189 +2,187 @@
 
 int main()
 {
-	setlocale(LC_ALL, "rus");
-	int num, nus, pr, kol1 = 0, kol2 = 0, kol3 = 0, nomer, temp;
-	bool flag, f;
-	Wrist* w = new Wrist[N];
-	Wall* q = new Wall[N];
-	Electronic* e = new Electronic[N];
+    setlocale(LC_ALL, ".UTF8");
+    int num, nus, pr, kol1 = 0, kol2 = 0, kol3 = 0, nomer, temp;
+    bool flag, f;
+    Wrist* w = new Wrist[N];
+    Wall* q = new Wall[N];
+    Electronic* e = new Electronic[N];
 
-	while (true)
-	{
-		cout << "\t×àñû" << endl << "1 - Ìåõàíè÷åñêèå" << endl << "2 - Ýëåêòðîííûå" << endl << "0 - Âûõîä" << endl;
-		cin >> num;
-		switch (num)
-		{
-		case 1:
-			flag = true;
-			while (flag == true)
-			{
-				cout << "\tÌåõàíè÷åñêèå ÷àñû" << endl << "1 - Íàñòåííûå" << endl << "2 - Íàðó÷íûå" << endl << "0 - Âåðíóòüñÿ" << endl;
-				cin >> nus;
-				switch (nus)
-				{
-				case 1:
-					f = true;
-					while (f == true)
-					{
-						cout << "\tÂûáåðèòå" << endl;
-						cout << "1 - Äîáàâëåíèå" << endl << "2 - Ïðîñìîòð" << endl
-							<< "3 - Ðåäàêòèðîâàíèå" << endl << "0 - Âåðíóòüñÿ" << endl;
-						cin >> pr;
-						switch (pr)
-						{
-						case 1:
-							kol1++;
-							q[kol1 - 1].AddClock();
-							q[kol1 - 1].AddMechanical();
-							q[kol1 - 1].AddWall();
-							break;
-						case 2:
-							cout << "\tÑïèñîê" << endl;
-							for (int i = 0; i < kol1; i++)
-							{
-								q[i].ShowClock(i);
-								q[i].ShowMechanical();
-								q[i].ShowWall();
-							}
-							break;
-						case 3:
-							cout << "\tÑïèñîê" << endl;
-							for (int i = 0; i < kol1; i++)
-							{
-								q[i].ShowClock(i);
-								q[i].ShowMechanical();
-								q[i].ShowWall();
-							}
-							cout << "Ââåäèòå íîìåð ÷àñîâ" << endl;
-							cin >> nomer;
-							cout << "\tÊàêèå äàííûå èçìåíèòü?" << endl << "1 - Ïðîèçâîäèòåëÿ"
-								<< endl << "2 - Ìàòåðèàë" << endl << "3 - Ñòîèñîñòü" << endl;
-							cout << "4 - Òèï öèôåðáëàòà" << endl << "5 - Ñòåêëî" << endl;
-							cout << "6 - Ôîðìà" << endl << "7 - Öåíà äåëåíèÿ öèôåðáëàòà" << endl;
-							cin >> temp;
-							q[nomer - 1].EditClock(temp);
-							q[nomer - 1].EditMechanical(temp);
-							q[nomer - 1].EditWall(temp);
-							break;
-						case 0:
-							f = false;
-							break;
-						}
-					}
-					break;
-				case 2:
-					f = true;
-					while (f == true)
-					{
-						cout << "\tÂûáåðèòå" << endl;
-						cout << "1 - Äîáàâëåíèå" << endl << "2 - Ïðîñìîòð" << endl
-							<< "3 - Ðåäàêòèðîâàíèå" << endl << "0 - Âåðíóòüñÿ" << endl;
-						cin >> pr;
-						switch (pr)
-						{
-						case 1:
-							kol2++;
-							w[kol2 - 1].AddClock();
-							w[kol2 - 1].AddMechanical();
-							w[kol2 - 1].AddWrist();
-							break;
-						case 2:
-							cout << "\tÑïèñîê" << endl;
-							for (int i = 0; i < kol2; i++)
-							{
-								w[i].ShowClock(i);
-								w[i].ShowMechanical();
-								w[i].ShowWrist();
-							}
-							break;
-						case 3:
-							cout << "\tÑïèñîê" << endl;
-							for (int i = 0; i < kol2; i++)
-							{
-								w[i].ShowClock(i);
-								w[i].ShowMechanical();
-								w[i].ShowWrist();
-							}
-							cout << "Ââåäèòå íîìåð ÷àñîâ" << endl;
-							cin >> nomer;
-							cout << "\tÊàêèå äàííûå èçìåíèòü?" << endl << "1 - Ïðîèçâîäèòåëÿ"
-								<< endl << "2 - Ìàòåðèàë" << endl << "3 - Ñòîèñîñòü" << endl;
-							cout << "4 - Òèï öèôåðáëàòà" << endl << "5 - Ñòåêëî" << endl;
-							cout << "6 - Ìààòåðèàë ðåìåøêà" << endl << "7 - Âîäîçàùèòà" << endl;
-							cin >> temp;
-							w[nomer - 1].EditClock(temp);
-							w[nomer - 1].EditMechanical(temp);
-							w[nomer - 1].EditWrist(temp);
-							break;
-						case 0:
-							f = false;
-							break;
-						}
-					}
-					break;
-				case 0:
-					flag = false;
-					break;
-				}
-			}
-			break;
-		case 2:
-			cout << "\tÝëåêòðîííûå ÷àñû" << endl;
-			f = true;
-			while (f == true)
-			{
-				cout << "\tÂûáåðèòå" << endl;
-				cout << "1 - Äîáàâëåíèå" << endl << "2 - Ïðîñìîòð" << endl
-					<< "3 - Ðåäàêòèðîâàíèå" << endl << "0 - Âåðíóòüñÿ" << endl;
-				cin >> pr;
-				switch (pr)
-				{
-				case 1:
-					kol3++;
-					e[kol3 - 1].AddClock();
-					e[kol3 - 1].AddElectronic();
-					break;
-				case 2:
-					cout << "\tÑïèñîê" << endl;
-					for (int i = 0; i < kol3; i++)
-					{
-						e[i].ShowClock(i);
-						e[i].ShowElectronic();
-					}
-					break;
-				case 3:
-					cout << "\tÑïèñîê" << endl;
-					for (int i = 0; i < kol3; i++)
-					{
-						e[i].ShowClock(i);
-						e[i].ShowElectronic();
-					}
-					cout << "Ââåäèòå íîìåð ÷àñîâ" << endl;
-					cin >> nomer;
-					cout << "\tÊàêèå äàííûå èçìåíèòü?" << endl << "1 - Ïðîèçâîäèòåëÿ"
-						<< endl << "2 - Ìàòåðèàë" << endl << "3 - Ñòîèñîñòü" << endl;
-					cout << "4 - Òèï ÷àñîâ" << endl << "5 - Ïëàòôîðìà" << endl;
-					cin >> temp;
-					e[nomer - 1].EditClock(temp);
-					e[nomer - 1].EditElectronic(temp);
-					break;
-				case 0:
-					f = false;
-					break;
-				}
-			}
-			break;
-		case 0:
-			delete[]w;
-			delete[]q;
-			delete[]e;
-			return 0;
-		}
-	}
-	delete[]w;
-	delete[]q;
-	delete[]e;
+    while (true)
+    {
+        cout << "\tÐ§Ð°ÑÑ‹" << endl << "1 - ÐœÐµÑ…Ð°Ð½Ð¸Ñ‡ÐµÑÐºÐ¸Ðµ" << endl << "2 - Ð­Ð»ÐµÐºÑ‚Ñ€Ð¾Ð½Ð½Ñ‹Ðµ" << endl << "0 - Ð’Ñ‹Ñ…Ð¾Ð´" << endl;
+        cin >> num;
+        switch (num)
+        {
+        case 1:
+            flag = true;
+            while (flag == true)
+            {
+                cout << "\tÐœÐµÑ…Ð°Ð½Ð¸Ñ‡ÐµÑÐºÐ¸Ðµ Ñ‡Ð°ÑÑ‹" << endl << "1 - ÐÐ°ÑÑ‚ÐµÐ½Ð½Ñ‹Ðµ" << endl << "2 - ÐÐ°Ñ€ÑƒÑ‡Ð½Ñ‹Ðµ" << endl << "0 - Ð’ÐµÑ€Ð½ÑƒÑ‚ÑŒÑÑ" << endl;
+                cin >> nus;
+                switch (nus)
+                {
+                case 1:
+                    f = true;
+                    while (f == true)
+                    {
+                        cout << "\tÐ’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ" << endl;
+                        cout << "1 - Ð”Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð¸Ðµ" << endl << "2 - ÐŸÑ€Ð¾ÑÐ¼Ð¾Ñ‚Ñ€" << endl
+                            << "3 - Ð ÐµÐ´Ð°ÐºÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ðµ" << endl << "0 - Ð’ÐµÑ€Ð½ÑƒÑ‚ÑŒÑÑ" << endl;
+                        cin >> pr;
+                        switch (pr)
+                        {
+                        case 1:
+                            kol1++;
+                            q[kol1 - 1].AddClock();
+                            q[kol1 - 1].AddMechanical();
+                            q[kol1 - 1].AddWall();
+                            break;
+                        case 2:
+                            cout << "\tÐ¡Ð¿Ð¸ÑÐ¾Ðº" << endl;
+                            for (int i = 0; i < kol1; i++)
+                            {
+                                q[i].ShowClock(i);
+                                q[i].ShowMechanical();
+                                q[i].ShowWall();
+                            }
+                            break;
+                        case 3:
+                            cout << "\tÐ¡Ð¿Ð¸ÑÐ¾Ðº" << endl;
+                            for (int i = 0; i < kol1; i++)
+                            {
+                                q[i].ShowClock(i);
+                                q[i].ShowMechanical();
+                                q[i].ShowWall();
+                            }
+                            cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð¼ÐµÑ€ Ñ‡Ð°ÑÐ¾Ð²" << endl;
+                            cin >> nomer;
+                            cout << "\tÐšÐ°ÐºÐ¸Ðµ Ð´Ð°Ð½Ð½Ñ‹Ðµ Ð¸Ð·Ð¼ÐµÐ½Ð¸Ñ‚ÑŒ?" << endl << "1 - ÐŸÑ€Ð¾Ð¸Ð·Ð²Ð¾Ð´Ð¸Ñ‚ÐµÐ»Ñ"
+                                << endl << "2 - ÐœÐ°Ñ‚ÐµÑ€Ð¸Ð°Ð»" << endl << "3 - Ð¡Ñ‚Ð¾Ð¸ÑÐ¾ÑÑ‚ÑŒ" << endl;
+                            cout << "4 - Ð¢Ð¸Ð¿ Ñ†Ð¸Ñ„ÐµÑ€Ð±Ð»Ð°Ñ‚Ð°" << endl << "5 - Ð¡Ñ‚ÐµÐºÐ»Ð¾" << endl;
+                            cout << "6 - Ð¤Ð¾Ñ€Ð¼Ð°" << endl << "7 - Ð¦ÐµÐ½Ð° Ð´ÐµÐ»ÐµÐ½Ð¸Ñ Ñ†Ð¸Ñ„ÐµÑ€Ð±Ð»Ð°Ñ‚Ð°" << endl;
+                            cin >> temp;
+                            q[nomer - 1].EditClock(temp);
+                            q[nomer - 1].EditMechanical(temp);
+                            q[nomer - 1].EditWall(temp);
+                            break;
+                        case 0:
+                            f = false;
+                            break;
+                        }
+                    }
+                    break;
+                case 2:
+                    f = true;
+                    while (f == true)
+                    {
+                        cout << "\tÐ’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ" << endl;
+                        cout << "1 - Ð”Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð¸Ðµ" << endl << "2 - ÐŸÑ€Ð¾ÑÐ¼Ð¾Ñ‚Ñ€" << endl
+                            << "3 - Ð ÐµÐ´Ð°ÐºÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ðµ" << endl << "0 - Ð’ÐµÑ€Ð½ÑƒÑ‚ÑŒÑÑ" << endl;
+                        cin >> pr;
+                        switch (pr)
+                        {
+                        case 1:
+                            kol2++;
+                            w[kol2 - 1].AddClock();
+                            w[kol2 - 1].AddMechanical();
+                            w[kol2 - 1].AddWrist();
+                            break;
+                        case 2:
+                            cout << "\tÐ¡Ð¿Ð¸ÑÐ¾Ðº" << endl;
+                            for (int i = 0; i < kol2; i++)
+                            {
+                                w[i].ShowClock(i);
+                                w[i].ShowMechanical();
+                                w[i].ShowWrist();
+                            }
+                            break;
+                        case 3:
+                            cout << "\tÐ¡Ð¿Ð¸ÑÐ¾Ðº" << endl;
+                            for (int i = 0; i < kol2; i++)
+                            {
+                                w[i].ShowClock(i);
+                                w[i].ShowMechanical();
+                                w[i].ShowWrist();
+                            }
+                            cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð¼ÐµÑ€ Ñ‡Ð°ÑÐ¾Ð²" << endl;
+                            cin >> nomer;
+                            cout << "\tÐšÐ°ÐºÐ¸Ðµ Ð´Ð°Ð½Ð½Ñ‹Ðµ Ð¸Ð·Ð¼ÐµÐ½Ð¸Ñ‚ÑŒ?" << endl << "1 - ÐŸÑ€Ð¾Ð¸Ð·Ð²Ð¾Ð´Ð¸Ñ‚ÐµÐ»Ñ"
+                                << endl << "2 - ÐœÐ°Ñ‚ÐµÑ€Ð¸Ð°Ð»" << endl << "3 - Ð¡Ñ‚Ð¾Ð¸ÑÐ¾ÑÑ‚ÑŒ" << endl;
+                            cout << "4 - Ð¢Ð¸Ð¿ Ñ†Ð¸Ñ„ÐµÑ€Ð±Ð»Ð°Ñ‚Ð°" << endl << "5 - Ð¡Ñ‚ÐµÐºÐ»Ð¾" << endl;
+                            cout << "6 - ÐœÐ°Ð°Ñ‚ÐµÑ€Ð¸Ð°Ð» Ñ€ÐµÐ¼ÐµÑˆÐºÐ°" << endl << "7 - Ð’Ð¾Ð´Ð¾Ð·Ð°Ñ‰Ð¸Ñ‚Ð°" << endl;
+                            cin >> temp;
+                            w[nomer - 1].EditClock(temp);
+                            w[nomer - 1].EditMechanical(temp);
+                            w[nomer - 1].EditWrist(temp);
+                            break;
+                        case 0:
+                            f = false;
+                            break;
+                        }
+                    }
+                    break;
+                case 0:
+                    flag = false;
+                    break;
+                }
+            }
+            break;
+        case 2:
+            cout << "\tÐ­Ð»ÐµÐºÑ‚Ñ€Ð¾Ð½Ð½Ñ‹Ðµ Ñ‡Ð°ÑÑ‹" << endl;
+            f = true;
+            while (f == true)
+            {
+                cout << "\tÐ’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ" << endl;
+                cout << "1 - Ð”Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð¸Ðµ" << endl << "2 - ÐŸÑ€Ð¾ÑÐ¼Ð¾Ñ‚Ñ€" << endl
+                    << "3 - Ð ÐµÐ´Ð°ÐºÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ðµ" << endl << "0 - Ð’ÐµÑ€Ð½ÑƒÑ‚ÑŒÑÑ" << endl;
+                cin >> pr;
+                switch (pr)
+                {
+                case 1:
+                    kol3++;
+                    e[kol3 - 1].AddClock();
+                    e[kol3 - 1].AddElectronic();
+                    break;
+                case 2:
+                    cout << "\tÐ¡Ð¿Ð¸ÑÐ¾Ðº" << endl;
+                    for (int i = 0; i < kol3; i++)
+                    {
+                        e[i].ShowClock(i);
+                        e[i].ShowElectronic();
+                    }
+                    break;
+                case 3:
+                    cout << "\tÐ¡Ð¿Ð¸ÑÐ¾Ðº" << endl;
+                    for (int i = 0; i < kol3; i++)
+                    {
+                        e[i].ShowClock(i);
+                        e[i].ShowElectronic();
+                    }
+                    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð¼ÐµÑ€ Ñ‡Ð°ÑÐ¾Ð²" << endl;
+                    cin >> nomer;
+                    cout << "\tÐšÐ°ÐºÐ¸Ðµ Ð´Ð°Ð½Ð½Ñ‹Ðµ Ð¸Ð·Ð¼ÐµÐ½Ð¸Ñ‚ÑŒ?" << endl << "1 - ÐŸÑ€Ð¾Ð¸Ð·Ð²Ð¾Ð´Ð¸Ñ‚ÐµÐ»Ñ"
+                        << endl << "2 - ÐœÐ°Ñ‚ÐµÑ€Ð¸Ð°Ð»" << endl << "3 - Ð¡Ñ‚Ð¾Ð¸ÑÐ¾ÑÑ‚ÑŒ" << endl;
+                    cout << "4 - Ð¢Ð¸Ð¿ Ñ‡Ð°ÑÐ¾Ð²" << endl << "5 - ÐŸÐ»Ð°Ñ‚Ñ„Ð¾Ñ€Ð¼Ð°" << endl;
+                    cin >> temp;
+                    e[nomer - 1].EditClock(temp);
+                    e[nomer - 1].EditElectronic(temp);
+                    break;
+                case 0:
+                    f = false;
+                    break;
+                }
+            }
+            break;
+        case 0:
+            delete[]w;
+            delete[]q;
+            delete[]e;
+            return 0;
+        }
+    }
+    delete[]w;
+    delete[]q;
+    delete[]e;
 }
-
-

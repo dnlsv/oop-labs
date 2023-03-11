@@ -5,68 +5,68 @@
 class Electronic : public Clock
 {
 private:
-	char* type; //тип часов
-	char* platform; //платформа
+    char* type; //С‚РёРї С‡Р°СЃРѕРІ
+    char* platform; //РїР»Р°С‚С„РѕСЂРјР°
 public:
-	Electronic();
-	~Electronic();
-	void set_type(char*);
-	char* get_type();
-	void set_platform(char*);
-	char* get_platform();
-	void input_electronic();
-	void view_electronic();
+    Electronic();
+    ~Electronic();
+    void set_type(char*);
+    char* get_type();
+    void set_platform(char*);
+    char* get_platform();
+    void input_electronic();
+    void view_electronic();
 };
 
 Electronic::Electronic()
 {
-	type = new char[N];
-	platform = new char[N];
+    type = new char[N];
+    platform = new char[N];
 }
 
 Electronic::~Electronic()
 {
-	delete[] type;
-	delete[] platform;
+    delete[] type;
+    delete[] platform;
 }
 
 void Electronic::set_type(char* buf)
 {
-	strcpy_s(type, N, buf);
+    strcpy_s(type, N, buf);
 }
 
 char* Electronic::get_type()
 {
-	return type;
+    return type;
 }
 
 void Electronic::set_platform(char* buf)
 {
-	strcpy_s(platform, N, buf);
+    strcpy_s(platform, N, buf);
 }
 
 char* Electronic::get_platform()
 {
-	return platform;
+    return platform;
 }
 
 void Electronic::input_electronic()
 {
-	cout << "Введите" << endl << "Производителя: ";
-	cin >> producer;
-	cout << "Материал: ";
-	cin >> material;
-	cout << "Цену: ";
-	cin >> cost;
-	cout << "Тип часов: ";
-	cin >> type;
-	cout << "Платформа: ";
-	cin >> platform;
-	cout << endl;
+    cout << "Р’РІРµРґРёС‚Рµ" << endl << "РџСЂРѕРёР·РІРѕРґРёС‚РµР»СЏ: ";
+    cin >> producer;
+    cout << "РњР°С‚РµСЂРёР°Р»: ";
+    cin >> material;
+    cout << "Р¦РµРЅСѓ: ";
+    cin >> cost;
+    cout << "РўРёРї С‡Р°СЃРѕРІ: ";
+    cin >> type;
+    cout << "РџР»Р°С‚С„РѕСЂРјР°: ";
+    cin >> platform;
+    cout << endl;
 }
 
 void Electronic::view_electronic()
 {
-	cout << setw(15) << producer << setw(10) << material << setw(6) << cost
-		<< setw(11) << type << setw(11) << platform <<  endl;
+    cout << setw(15) << producer << setw(10) << material << setw(6) << cost
+        << setw(11) << type << setw(11) << platform << endl;
 }

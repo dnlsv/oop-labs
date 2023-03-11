@@ -1,35 +1,33 @@
 #include "Header.h"
 
 int main() {
-	setlocale(LC_ALL, "Russian");
-	srand(time(NULL));
-	int n, m;
-	cout << "Ââåäèòå ðàçìåð ìàññèâà" << endl;
-	cout << "n = ";
-	cin >> n;
-	m = n;
-	matr a(n, m);
-	cout << "Ââåäèòå ýëåìåíòû ìàññèâà" << endl;
-	a.input();
-	cout << "Èñõîäíûé ìàññèâ ¹1" << endl;
-	a.output();
-	matr b(n, m);
-	cout << "Ââåäèòå ýëåìåíòû ìàññèâà" << endl;
-	b.input();
-	cout << "Èñõîäíûé ìàññèâ ¹2" << endl;
-	b.output();
-	matr rez = a.addition(b);
-	cout << "Ñëîæåíèå:" << endl;
-	rez.output();
-	matr otv = a.multiplication(b);
-	cout << "Ïðîèçâåäåíèå:" << endl;
-	otv.output();
+    setlocale(LC_ALL, ".UTF8");
+    srand(time(NULL));
+    int n, m;
+    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ€Ð°Ð·Ð¼ÐµÑ€ Ð¼Ð°ÑÑÐ¸Ð²Ð°" << endl;
+    cout << "n = ";
+    cin >> n;
+    m = n;
+    matr a(n, m);
+    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ñ‹ Ð¼Ð°ÑÑÐ¸Ð²Ð°" << endl;
+    a.input();
+    cout << "Ð˜ÑÑ…Ð¾Ð´Ð½Ñ‹Ð¹ Ð¼Ð°ÑÑÐ¸Ð² â„–1" << endl;
+    a.output();
+    matr b(n, m);
+    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ñ‹ Ð¼Ð°ÑÑÐ¸Ð²Ð°" << endl;
+    b.input();
+    cout << "Ð˜ÑÑ…Ð¾Ð´Ð½Ñ‹Ð¹ Ð¼Ð°ÑÑÐ¸Ð² â„–2" << endl;
+    b.output();
+    matr rez = a.addition(b);
+    cout << "Ð¡Ð»Ð¾Ð¶ÐµÐ½Ð¸Ðµ:" << endl;
+    rez.output();
+    matr otv = a.multiplication(b);
+    cout << "ÐŸÑ€Ð¾Ð¸Ð·Ð²ÐµÐ´ÐµÐ½Ð¸Ðµ:" << endl;
+    otv.output();
 
-	matr per = a + b;
-	per.output();
+    matr per = a + b;
+    per.output();
 
-	matr rep = a * b;
-	rep.output();
+    matr rep = a * b;
+    rep.output();
 }
-
-

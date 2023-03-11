@@ -3,122 +3,110 @@
 template<class T>
 void Interface<T>::menu()
 {
-	int num;
-	List<Electronic> tmp;
-	List<Wrist> tmp1;
-	List<Wall> tmp2;
+    int num;
+    List<Electronic> tmp;
+    List<Wrist> tmp1;
+    List<Wall> tmp2;
 
-	while (1)
-	{
-		cout << "\t×ÀÑÛ" << endl << endl;
-		cout << "1 - Ýëåêòðîííûå ÷àñû" << endl << "2 - Íàðó÷íûå ÷àñû" << endl << "3 - Íàñòåííûå ÷àñû" << endl << "0 - Âåðíóòüñÿ" << endl;
-		cin >> num;
-		switch (num)
-		{
-		case 1:
-		{
-			Interface<Electronic> obj;
-			obj.fun(tmp);
-			break;
-		}
-		case 2:
-		{
-			Interface<Wrist> obj1;
-			obj1.fun(tmp1);
-			break;
-		}
-		case 3:
-		{
-			Interface<Wall> obj2;
-			obj2.fun(tmp2);
-			break;
-		}
-		case 0:
-			return;
-		}
-	}
+    while (1)
+    {
+        cout << "\tÐ§ÐÐ¡Ð«" << endl << endl;
+        cout << "1 - Ð­Ð»ÐµÐºÑ‚Ñ€Ð¾Ð½Ð½Ñ‹Ðµ Ñ‡Ð°ÑÑ‹" << endl << "2 - ÐÐ°Ñ€ÑƒÑ‡Ð½Ñ‹Ðµ Ñ‡Ð°ÑÑ‹" << endl << "3 - ÐÐ°ÑÑ‚ÐµÐ½Ð½Ñ‹Ðµ Ñ‡Ð°ÑÑ‹" << endl << "0 - Ð’ÐµÑ€Ð½ÑƒÑ‚ÑŒÑÑ" << endl;
+        cin >> num;
+        switch (num)
+        {
+        case 1:
+        {
+            Interface<Electronic> obj;
+            obj.fun(tmp);
+            break;
+        }
+        case 2:
+        {
+            Interface<Wrist> obj1;
+            obj1.fun(tmp1);
+            break;
+        }
+        case 3:
+        {
+            Interface<Wall> obj2;
+            obj2.fun(tmp2);
+            break;
+        }
+        case 0:
+            return;
+        }
+    }
 }
 
 template <class T>
 void Interface<T>::fun(List<T>& obj)
 {
-	int num;
-	bool flag = true;
-	while (flag)
-	{
-		cout << endl << "1 - Äîáàâèòü" << endl << "2 - Óäàëèòü" << endl << "3 - Ïðîñìîòð" << endl << "4 - Ðåäàêòèðîâàòü" << endl << "0 - Âåðíóòüñÿ" << endl;
-		cin >> num;
-		switch (num)
-		{
-		case 1:
-			this->addElement(obj);
-			break;
-		case 2:
-			this->deleteElement(obj);
-			break;
-		case 3:
-			this->viewElements(obj);
-			break;
-		case 4:
-			this->editElement(obj);
-			break;
-		case 0:
-			flag = false;
-			break;
-		}
-	}
+    int num;
+    bool flag = true;
+    while (flag)
+    {
+        cout << endl << "1 - Ð”Ð¾Ð±Ð°Ð²Ð¸Ñ‚ÑŒ" << endl << "2 - Ð£Ð´Ð°Ð»Ð¸Ñ‚ÑŒ" << endl << "3 - ÐŸÑ€Ð¾ÑÐ¼Ð¾Ñ‚Ñ€" << endl << "4 - Ð ÐµÐ´Ð°ÐºÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ñ‚ÑŒ" << endl << "0 - Ð’ÐµÑ€Ð½ÑƒÑ‚ÑŒÑÑ" << endl;
+        cin >> num;
+        switch (num)
+        {
+        case 1:
+            this->addElement(obj);
+            break;
+        case 2:
+            this->deleteElement(obj);
+            break;
+        case 3:
+            this->viewElements(obj);
+            break;
+        case 4:
+            this->editElement(obj);
+            break;
+        case 0:
+            flag = false;
+            break;
+        }
+    }
 }
 
 template <class T>
 void Interface<T>::addElement(List<T>& obj)
 {
-	cout << endl;
-	cin >> element;
-	obj.AddEnd(element);
-	cout << endl << "Çàïèñü äîáàâëåíà!" << endl;
+    cout << endl;
+    cin >> element;
+    obj.AddEnd(element);
+    cout << endl << "Ð—Ð°Ð¿Ð¸ÑÑŒ Ð´Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð°!" << endl;
 }
 
 template <class T>
 void Interface<T>::deleteElement(List<T>& obj)
 {
-	int num;
-	viewElements(obj);
-	cout << endl << "Ââåäèòå íîìåð çàïèñè äëÿ óäàëåíèÿ:" << endl;
-	cin >> num;
-	obj.Del(num);
-	cout << endl << "Çàïèñü óäàëåíà!" << endl;
+    int num;
+    viewElements(obj);
+    cout << endl << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð¼ÐµÑ€ Ð·Ð°Ð¿Ð¸ÑÐ¸ Ð´Ð»Ñ ÑƒÐ´Ð°Ð»ÐµÐ½Ð¸Ñ:" << endl;
+    cin >> num;
+    obj.Del(num);
+    cout << endl << "Ð—Ð°Ð¿Ð¸ÑÑŒ ÑƒÐ´Ð°Ð»ÐµÐ½Ð°!" << endl;
 }
 
 template <class T>
 void Interface<T>::viewElements(List<T>& obj)
 {
-	cout << endl;
-	element.tableCap();
-	obj.View();
+    cout << endl;
+    element.tableCap();
+    obj.View();
 }
 
 template <class T>
 void Interface<T>::editElement(List<T>& obj)
 {
-	int num;
-	viewElements(obj);
-	cout << endl << "Ââåäèòå íîìåð çàïèñè äëÿ ðåäàêòèðîâàíèÿ:" << endl;
-	cin >> num;
-	element = obj.getElement(num);
-	element.edit();
-	obj.Del(num);
-	obj.Insert(num, element);
-	cout << endl << "Çàïèñü îòðåäàêòèðîâàíà!" << endl;
+    int num;
+    viewElements(obj);
+    cout << endl << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð¼ÐµÑ€ Ð·Ð°Ð¿Ð¸ÑÐ¸ Ð´Ð»Ñ Ñ€ÐµÐ´Ð°ÐºÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ñ:" << endl;
+    cin >> num;
+    element = obj.getElement(num);
+    element.edit();
+    obj.Del(num);
+    obj.Insert(num, element);
+    cout << endl << "Ð—Ð°Ð¿Ð¸ÑÑŒ Ð¾Ñ‚Ñ€ÐµÐ´Ð°ÐºÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð°!" << endl;
 }
-
-
-
-
-
-
-
-
-
-
-
-

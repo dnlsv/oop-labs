@@ -2,92 +2,91 @@
 #include "Wall.h"
 #include "Electronic.h"
 
-
 using namespace std;
 
 int main()
 {
-	setlocale(LC_ALL, "rus");
-	
-	Wrist* w = new Wrist[N];
+    setlocale(LC_ALL, ".UTF8");
 
-	cout << "\tÍàðó÷íûå ÷àñû" << endl;
-	for (int i = 0; i < 3; i++)
-	{
-		cin >> w[i];
-		//w[i].input_wrist();
-	}
+    Wrist* w = new Wrist[N];
 
-	w[0].head_wrist();
-	for (int i = 0; i < 3; i++)
-	{
-		cout << setw(3) << i + 1;
-		cout << w[i];
-		//w[i].view_wrist();
-	}
-	cout << endl;
+    cout << "\tÐÐ°Ñ€ÑƒÑ‡Ð½Ñ‹Ðµ Ñ‡Ð°ÑÑ‹" << endl;
+    for (int i = 0; i < 3; i++)
+    {
+        cin >> w[i];
+        //w[i].input_wrist();
+    }
 
-	char buf[N];
-	int buf1;
-	bool buf2;
+    w[0].head_wrist();
+    for (int i = 0; i < 3; i++)
+    {
+        cout << setw(3) << i + 1;
+        cout << w[i];
+        //w[i].view_wrist();
+    }
+    cout << endl;
 
-	int num, m;
-	bool flag = true;
+    char buf[N];
+    int buf1;
+    bool buf2;
 
-	cout << "Ââåäèòå íîìåð ÷àñîâ" << endl;
-	cin >> m;
+    int num, m;
+    bool flag = true;
 
-		cout << "\tÊàêèå äàííûå èçìåíèòü?" << endl << "1 - Ïðîèçâîäèòåëü" << endl << "2 - Ìàòåðèàë" << endl << "3 - Ñòîèìîñòü" << endl
-			<< "4 - Òèï öèôåðáëàòà" << endl << "5 - Ñòåêëî" << endl << "6 - Ìàòåðèàë ðåìåøêà" << endl << "7 - Âîäîçàùèòà" << endl;
-		cin >> num;
-		switch (num)
-		{
-		case 1:
-			cin >> buf;
-			w[m - 1].set_producer(buf);
-			break;
-		case 2:
-			cin >> buf;
-			w[m - 1].set_material(buf);
-			break;
-		case 3:
-			cin >> buf1;
-			w[m - 1].set_cost(buf1);
-			break;
-		case 4:
-			cin >> buf;
-			w[m - 1].set_face(buf);
-			break;
-		case 5:
-			cin >> buf;
-			w[m - 1].set_glass(buf);
-			break;
-		case 6:
-			cin >> buf;
-			w[m - 1].set_materialrem(buf);
-			break;
-		case 7:
-			cin >> buf2;
-			w[m - 1].set_water(buf2);
-			break;
-		}
+    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð¼ÐµÑ€ Ñ‡Ð°ÑÐ¾Ð²" << endl;
+    cin >> m;
 
-		cout << endl;
-	w[0].head_wrist();
-	for (int i = 0; i < 3; i++)
-	{
-		cout << setw(3) << i + 1;
-		w[i].view_wrist();
-	}
-	cout << endl;
+    cout << "\tÐšÐ°ÐºÐ¸Ðµ Ð´Ð°Ð½Ð½Ñ‹Ðµ Ð¸Ð·Ð¼ÐµÐ½Ð¸Ñ‚ÑŒ?" << endl << "1 - ÐŸÑ€Ð¾Ð¸Ð·Ð²Ð¾Ð´Ð¸Ñ‚ÐµÐ»ÑŒ" << endl << "2 - ÐœÐ°Ñ‚ÐµÑ€Ð¸Ð°Ð»" << endl << "3 - Ð¡Ñ‚Ð¾Ð¸Ð¼Ð¾ÑÑ‚ÑŒ" << endl
+        << "4 - Ð¢Ð¸Ð¿ Ñ†Ð¸Ñ„ÐµÑ€Ð±Ð»Ð°Ñ‚Ð°" << endl << "5 - Ð¡Ñ‚ÐµÐºÐ»Ð¾" << endl << "6 - ÐœÐ°Ñ‚ÐµÑ€Ð¸Ð°Ð» Ñ€ÐµÐ¼ÐµÑˆÐºÐ°" << endl << "7 - Ð’Ð¾Ð´Ð¾Ð·Ð°Ñ‰Ð¸Ñ‚Ð°" << endl;
+    cin >> num;
+    switch (num)
+    {
+    case 1:
+        cin >> buf;
+        w[m - 1].set_producer(buf);
+        break;
+    case 2:
+        cin >> buf;
+        w[m - 1].set_material(buf);
+        break;
+    case 3:
+        cin >> buf1;
+        w[m - 1].set_cost(buf1);
+        break;
+    case 4:
+        cin >> buf;
+        w[m - 1].set_face(buf);
+        break;
+    case 5:
+        cin >> buf;
+        w[m - 1].set_glass(buf);
+        break;
+    case 6:
+        cin >> buf;
+        w[m - 1].set_materialrem(buf);
+        break;
+    case 7:
+        cin >> buf2;
+        w[m - 1].set_water(buf2);
+        break;
+    }
 
-	delete[]w;
+    cout << endl;
+    w[0].head_wrist();
+    for (int i = 0; i < 3; i++)
+    {
+        cout << setw(3) << i + 1;
+        w[i].view_wrist();
+    }
+    cout << endl;
 
-	/*Wall* q = new Wall[N];
-	Electronic* e = new Electronic[N];
-	delete[]q;
-	delete[]e;*/
-	system("pause");
+    delete[]w;
 
-	return 0;
+    /*Wall* q = new Wall[N];
+    Electronic* e = new Electronic[N];
+    delete[]q;
+    delete[]e;*/
+    system("pause");
+
+    return 0;
 }

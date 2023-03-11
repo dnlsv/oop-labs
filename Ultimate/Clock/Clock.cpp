@@ -50,11 +50,11 @@ ostream& operator <<(ostream& out, Clock& obj)
 
 istream& operator >> (istream& in, Clock& obj)
 {
-	cout << "Ââåäèòå" << endl << "Ïðîèçâîäèòåëÿ: ";
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ" << endl << "ÐŸÑ€Ð¾Ð¸Ð·Ð²Ð¾Ð´Ð¸Ñ‚ÐµÐ»Ñ: ";
 	in >> obj.producer;
-	cout << "Ìàòåðèàë: ";
+	cout << "ÐœÐ°Ñ‚ÐµÑ€Ð¸Ð°Ð»: ";
 	in >> obj.material;
-	cout << "Öåíó: ";
+	cout << "Ð¦ÐµÐ½Ñƒ: ";
 	in >> obj.cost;
 	return in;
 }

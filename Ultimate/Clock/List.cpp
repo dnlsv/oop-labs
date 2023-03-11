@@ -81,7 +81,7 @@ void List<T>::View()
         }
     }
     else
-        cout << endl << "\tÑïèñîê ïóñò!" << endl;
+        cout << endl << "\tÐ¡Ð¿Ð¸ÑÐ¾Ðº Ð¿ÑƒÑÑ‚!" << endl;
 }
 
 template <class T>

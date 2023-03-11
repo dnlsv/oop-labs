@@ -41,9 +41,9 @@ ostream& operator <<(ostream& out, Electronic& obj)
 istream& operator >> (istream& in, Electronic& obj)
 {
 	in >> dynamic_cast<Clock&>(obj);
-	cout << "Òèï ÷àñîâ: ";
+	cout << "Ð¢Ð¸Ð¿ Ñ‡Ð°ÑÐ¾Ð²: ";
 	cin >> obj.type;
-	cout << "Ïëàòôîðìà: ";
+	cout << "ÐŸÐ»Ð°Ñ‚Ñ„Ð¾Ñ€Ð¼Ð°: ";
 	cin >> obj.platform;
 	cout << endl;
 	return in;
@@ -51,18 +51,18 @@ istream& operator >> (istream& in, Electronic& obj)
 
 void Electronic::tableCap()
 {
-	cout << " " << setw(3) << left << "¹" << setw(15) << "Ïðîèçâîäèòåëü" << setw(10) << "Ìàòåðèàë" << setw(6) << "Öåíà"
-		<< setw(11) << "Òèï ÷àñîâ" << setw(11) << "Ïëàòôîðìà" << endl;
+	cout << " " << setw(3) << left << "â„–" << setw(15) << "ÐŸÑ€Ð¾Ð¸Ð·Ð²Ð¾Ð´Ð¸Ñ‚ÐµÐ»ÑŒ" << setw(10) << "ÐœÐ°Ñ‚ÐµÑ€Ð¸Ð°Ð»" << setw(6) << "Ð¦ÐµÐ½Ð°"
+		<< setw(11) << "Ð¢Ð¸Ð¿ Ñ‡Ð°ÑÐ¾Ð²" << setw(11) << "ÐŸÐ»Ð°Ñ‚Ñ„Ð¾Ñ€Ð¼Ð°" << endl;
 }
 
 void Electronic::edit()
 {
     int num;
-    cout << endl << "\tÊàêèå äàííûå èçìåíèòü?" << endl << endl << "1 - Ïðîèçâîäèòåëü" << endl
-        << "2 - Ìàòåðèàë" << endl << "3 - Öåíà" << endl << "4 - Òèï ÷àñîâ"
-        << endl << "5 - Ïëàòôîðìà" << endl;
+    cout << endl << "\tÐšÐ°ÐºÐ¸Ðµ Ð´Ð°Ð½Ð½Ñ‹Ðµ Ð¸Ð·Ð¼ÐµÐ½Ð¸Ñ‚ÑŒ?" << endl << endl << "1 - ÐŸÑ€Ð¾Ð¸Ð·Ð²Ð¾Ð´Ð¸Ñ‚ÐµÐ»ÑŒ" << endl
+        << "2 - ÐœÐ°Ñ‚ÐµÑ€Ð¸Ð°Ð»" << endl << "3 - Ð¦ÐµÐ½Ð°" << endl << "4 - Ð¢Ð¸Ð¿ Ñ‡Ð°ÑÐ¾Ð²"
+        << endl << "5 - ÐŸÐ»Ð°Ñ‚Ñ„Ð¾Ñ€Ð¼Ð°" << endl;
     cin >> num;
-    cout << endl << "\tÂâåäèòå íîâûå äàííûå" << endl << endl;
+    cout << endl << "\tÐ’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð²Ñ‹Ðµ Ð´Ð°Ð½Ð½Ñ‹Ðµ" << endl << endl;
     switch (num)
     {
     case 1:

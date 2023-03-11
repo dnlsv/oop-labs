@@ -4,106 +4,106 @@ using namespace std;
 template <class T>
 struct Spis2
 {
-	T data; // ‰‡ÌÌ˚Â
-	Spis2<T>* next, * prev;
+    T data; // –¥–∞–Ω–Ω—ã–µ
+    Spis2<T>* next, * prev;
 };
 
 template <class T>
 class List
 {
 private:
-	Spis2<T>* begin, * end;
-	int count;
+    Spis2<T>* begin, * end;
+    int count;
 public:
-	List();
-	~List();
+    List();
+    ~List();
 
-	void AddEnd(T n);
-	void AddBegin(T n);
-	void Insert(int pos = 0);
+    void AddEnd(T n);
+    void AddBegin(T n);
+    void Insert(int pos = 0);
 
-	void DelAll();
-	void Del(int pos = 0);
+    void DelAll();
+    void Del(int pos = 0);
 
-	void View();
+    void View();
 
-	void Search();
+    void Search();
 
-	void Menu();
+    void Menu();
 };
 
 template <class T>
 List<T>::List()
 {
-	begin = end = NULL;
-	count = 0;
+    begin = end = NULL;
+    count = 0;
 }
 
 template <class T>
 List<T>::~List()
 {
-	DelAll();
+    DelAll();
 }
 
 template <class T>
 void List<T>::AddBegin(T n)
 {
-	Spis2<T>* temp = new Spis2<T>;
-	temp->prev = 0;
-	temp->data = n;
-	temp->next = begin;
-	if (begin != 0)
-		begin->prev = temp;
-	if (count == 0)
-		begin = end = temp;
-	else
-		begin = temp;
-	count++;
+    Spis2<T>* temp = new Spis2<T>;
+    temp->prev = 0;
+    temp->data = n;
+    temp->next = begin;
+    if (begin != 0)
+        begin->prev = temp;
+    if (count == 0)
+        begin = end = temp;
+    else
+        begin = temp;
+    count++;
 }
 
 template <class T>
 void List<T>::AddEnd(T n)
 {
-	Spis2<T>* temp = new Spis2<T>;
-	temp->next = 0;
-	temp->data = n;
-	temp->prev = end;
-	if (end != 0)
-		end->next = temp;
-	if (count == 0)
-		begin = end = temp;
-	else
-		end = temp;
-	count++;
+    Spis2<T>* temp = new Spis2<T>;
+    temp->next = 0;
+    temp->data = n;
+    temp->prev = end;
+    if (end != 0)
+        end->next = temp;
+    if (count == 0)
+        begin = end = temp;
+    else
+        end = temp;
+    count++;
 }
 
 template <class T>
 void List<T>::Insert(int pos)
 {
-	int num;
-	cout << "\tƒÓ·‡‚ÎÂÌËÂ:" << endl << "1 - ¬ Ì‡˜‡ÎÓ" << endl << "2 - ¬ ÍÓÌÂˆ" << endl;
-	cin >> num;
-	if (num != 1 && num != 2)
-	{
-		cout << "ÕÂ‚ÂÌ‡ˇ ÔÓÁËˆËˇ!\n";
-		return;
-	}
-	if (num == 1)
-	{
-		int data;
-		cout << "¬‚Â‰ËÚÂ ‰‡ÌÌ˚Â: ";
-		cin >> data;
-		AddBegin(data);
-		return;
-	}
-	if (num == 2)
-	{
-		int data;
-		cout << "¬‚Â‰ËÚÂ ‰‡ÌÌ˚Â: ";
-		cin >> data;
-		AddEnd(data);
-		return;
-	}
+    int num;
+    cout << "\t–î–æ–±–∞–≤–ª–µ–Ω–∏–µ:" << endl << "1 - –í –Ω–∞—á–∞–ª–æ" << endl << "2 - –í –∫–æ–Ω–µ—Ü" << endl;
+    cin >> num;
+    if (num != 1 && num != 2)
+    {
+        cout << "–ù–µ–≤–µ—Ä–Ω–∞—è –ø–æ–∑–∏—Ü–∏—è!\n";
+        return;
+    }
+    if (num == 1)
+    {
+        int data;
+        cout << "–í–≤–µ–¥–∏—Ç–µ –¥–∞–Ω–Ω—ã–µ: ";
+        cin >> data;
+        AddBegin(data);
+        return;
+    }
+    if (num == 2)
+    {
+        int data;
+        cout << "–í–≤–µ–¥–∏—Ç–µ –¥–∞–Ω–Ω—ã–µ: ";
+        cin >> data;
+        AddEnd(data);
+        return;
+    }
 }
 
 
@@ -111,114 +111,114 @@ void List<T>::Insert(int pos)
 template <class T>
 void List<T>::Del(int pos)
 {
-	if (pos == 0)
-	{
-		cout << "¬‚Â‰ËÚÂ ÔÓÁËˆË˛: ";
-		cin >> pos;
-	}
-	if (pos < 1 || pos > count)
-	{
-		cout << "ÕÂ‚ÂÌ‡ˇ ÔÓÁËˆËˇ!\n";
-		return;
-	}
-	Spis2<T>* del = begin;
-	for (int i = 1; i < pos; i++)
-		del = del->next;
+    if (pos == 0)
+    {
+        cout << "–í–≤–µ–¥–∏—Ç–µ –ø–æ–∑–∏—Ü–∏—é: ";
+        cin >> pos;
+    }
+    if (pos < 1 || pos > count)
+    {
+        cout << "–ù–µ–≤–µ—Ä–Ω–∞—è –ø–æ–∑–∏—Ü–∏—è!\n";
+        return;
+    }
+    Spis2<T>* del = begin;
+    for (int i = 1; i < pos; i++)
+        del = del->next;
 
-	Spis2<T>* prevd = del->prev;
-	Spis2<T>* after = del->next;
-	if (prevd != 0)
-		prevd->next = after;
-	if (after != 0)
-		after->prev = prevd;
-	if (pos == 1)
-		begin = after;
-	if (pos == count)
-		end = prevd;
+    Spis2<T>* prevd = del->prev;
+    Spis2<T>* after = del->next;
+    if (prevd != 0)
+        prevd->next = after;
+    if (after != 0)
+        after->prev = prevd;
+    if (pos == 1)
+        begin = after;
+    if (pos == count)
+        end = prevd;
 
-	delete del;
-	count--;
+    delete del;
+    count--;
 }
 
 template <class T>
 void List<T>::View()
 {
-	if (count != 0)
-	{
-		Spis2<T>* temp = begin;
-		cout << endl;
-		while (temp->next != 0)
-		{
-			cout << temp->data << " ";
-			temp = temp->next;
-		}
-		cout << temp->data << endl;
-	}
+    if (count != 0)
+    {
+        Spis2<T>* temp = begin;
+        cout << endl;
+        while (temp->next != 0)
+        {
+            cout << temp->data << " ";
+            temp = temp->next;
+        }
+        cout << temp->data << endl;
+    }
 }
 
 template <class T>
 void List<T>::Search()
 {
-	if (count != 0)
-	{
-		T d;
-		cout << "¬‚Â‰ËÚÂ Ô‡‡ÏÂÚ ÔÓËÒÍ‡" << endl;
-		cin >> d;
+    if (count != 0)
+    {
+        T d;
+        cout << "–í–≤–µ–¥–∏—Ç–µ –ø–∞—Ä–∞–º–µ—Ç—Ä –ø–æ–∏—Å–∫–∞" << endl;
+        cin >> d;
 
-		Spis2<T>* temp = begin;
-		cout << endl;
-		while (temp->next != 0)
-		{
-			if (temp->data == d)
-				cout << temp->data << " ";
-			temp = temp->next;
-		}
-		cout << temp->data << endl;
-	}
+        Spis2<T>* temp = begin;
+        cout << endl;
+        while (temp->next != 0)
+        {
+            if (temp->data == d)
+                cout << temp->data << " ";
+            temp = temp->next;
+        }
+        cout << temp->data << endl;
+    }
 }
 
 template <class T>
 void List<T>::DelAll()
 {
-	while (count != 0)
-		Del(1);
+    while (count != 0)
+        Del(1);
 }
 
 template <class T>
 void List<T>::Menu()
 {
-	List<T> w;
-	cout << "-------Spis2-------" << endl;
-	while (true)
-	{
-		int kod;
-		cout << endl << "1 - ƒÓ·‡‚ÎÂÌËÂ" << endl << "2 - ”‰‡ÎÂÌËÂ" << endl << "3 - œÓÒÏÓÚ" << endl << "4 - œÓËÒÍ"  << endl << "0 - ¬˚ıÓ‰" << endl;
-		cin >> kod;
-		switch (kod)
-		{
-		case 1:
-			w.Insert();
-			break;
-		case 2:
-			w.Del();
-			break;
-		case 3:
-			w.View();
-			break;
-		case 4:
-			w.Search();
-			break;
-		case 0:
-			w.DelAll();
-			return;
-		}
-	}
+    List<T> w;
+    cout << "-------Spis2-------" << endl;
+    while (true)
+    {
+        int kod;
+        cout << endl << "1 - –î–æ–±–∞–≤–ª–µ–Ω–∏–µ" << endl << "2 - –£–¥–∞–ª–µ–Ω–∏–µ" << endl << "3 - –ü—Ä–æ—Å–º–æ—Ç—Ä" << endl << "4 - –ü–æ–∏—Å–∫" << endl << "0 - –í—ã—Ö–æ–¥" << endl;
+        cin >> kod;
+        switch (kod)
+        {
+        case 1:
+            w.Insert();
+            break;
+        case 2:
+            w.Del();
+            break;
+        case 3:
+            w.View();
+            break;
+        case 4:
+            w.Search();
+            break;
+        case 0:
+            w.DelAll();
+            return;
+        }
+    }
 }
 
 int main()
 {
-	setlocale(LC_ALL, "rus");
-	List<double> ob;
-	ob.Menu();
-	system("pause");
+    setlocale(LC_ALL, ".UTF8");
+    List<double> ob;
+    ob.Menu();
+    system("pause");
 }

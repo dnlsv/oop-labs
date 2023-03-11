@@ -2,195 +2,195 @@
 
 Clock::Clock()
 {
-	producer = new char[N];
-	material = new char[N];
-	cost = 0;
+    producer = new char[N];
+    material = new char[N];
+    cost = 0;
 }
 
 Clock::~Clock()
 {
-	delete[]producer;
-	delete[]material;
+    delete[]producer;
+    delete[]material;
 }
 
 void Clock::AddClock()
 {
-	cout << "\tÂâåäèòå" << endl << "Ïðîèçâîäèòåëÿ: ";
-	cin >> producer;
-	cout << endl << "Ìàòåðèàë: ";
-	cin >> material;
-	cout << endl << "Öåíó: ";
-	cin >> cost;
+    cout << "\tÐ’Ð²ÐµÐ´Ð¸Ñ‚Ðµ" << endl << "ÐŸÑ€Ð¾Ð¸Ð·Ð²Ð¾Ð´Ð¸Ñ‚ÐµÐ»Ñ: ";
+    cin >> producer;
+    cout << endl << "ÐœÐ°Ñ‚ÐµÑ€Ð¸Ð°Ð»: ";
+    cin >> material;
+    cout << endl << "Ð¦ÐµÐ½Ñƒ: ";
+    cin >> cost;
 }
 
 void Clock::ShowClock(int i)
 {
-	cout << ++i << ". " << producer << " " << material << " " << cost;
+    cout << ++i << ". " << producer << " " << material << " " << cost;
 }
 
 void Clock::EditClock(int temp)
 {
-	switch (temp)
-	{
-	case 1:
-		cin >> producer;
-		break;
-	case 2:
-		cin >> material;
-		break;
-	case 3:
-		cin >> cost;
-		break;
-	}
+    switch (temp)
+    {
+    case 1:
+        cin >> producer;
+        break;
+    case 2:
+        cin >> material;
+        break;
+    case 3:
+        cin >> cost;
+        break;
+    }
 }
 
 void Mechanical::AddMechanical()
 {
-	cout << endl << "Òèï öèôåðáëàòà: ";
-	cin >> face;
-	cout << endl << "Òèï ñòåêëà: ";
-	cin >> glass;
+    cout << endl << "Ð¢Ð¸Ð¿ Ñ†Ð¸Ñ„ÐµÑ€Ð±Ð»Ð°Ñ‚Ð°: ";
+    cin >> face;
+    cout << endl << "Ð¢Ð¸Ð¿ ÑÑ‚ÐµÐºÐ»Ð°: ";
+    cin >> glass;
 }
 
 Mechanical::Mechanical()
 {
-	face = new char[N];
-	glass = new char[N];
+    face = new char[N];
+    glass = new char[N];
 }
 
 Mechanical::~Mechanical()
 {
-	delete[] face;
-	delete[] glass;
+    delete[] face;
+    delete[] glass;
 }
 
 void Mechanical::ShowMechanical()
 {
-	cout << " " << face << " " << glass;
+    cout << " " << face << " " << glass;
 }
 
 void Mechanical::EditMechanical(int temp)
 {
-	switch (temp)
-	{
-	case 4:
-		cin >> face;
-		break;
-	case 5:
-		cin >> glass;
-		break;
-	}
+    switch (temp)
+    {
+    case 4:
+        cin >> face;
+        break;
+    case 5:
+        cin >> glass;
+        break;
+    }
 }
 
 Electronic::Electronic()
 {
-	type = new char[N];
-	platform = new char[N];
+    type = new char[N];
+    platform = new char[N];
 }
 
 Electronic::~Electronic()
 {
-	delete[] type;
-	delete[] platform;
+    delete[] type;
+    delete[] platform;
 }
 
 void Electronic::AddElectronic()
 {
-	cout << endl << "Òèï ÷àñîâ: ";
-	cin >> type;
-	cout << endl << "Ïëàòôîðìó: ";
-	cin >> platform;
+    cout << endl << "Ð¢Ð¸Ð¿ Ñ‡Ð°ÑÐ¾Ð²: ";
+    cin >> type;
+    cout << endl << "ÐŸÐ»Ð°Ñ‚Ñ„Ð¾Ñ€Ð¼Ñƒ: ";
+    cin >> platform;
 }
 
 void Electronic::ShowElectronic()
 {
-	cout << " " << type << " " << platform << endl << endl;
+    cout << " " << type << " " << platform << endl << endl;
 }
 
 void Electronic::EditElectronic(int temp)
 {
-	switch (temp)
-	{
-	case 4:
-		cin >> type;
-		break;
-	case 5:
-		cin >> platform;
-		break;
-	}
+    switch (temp)
+    {
+    case 4:
+        cin >> type;
+        break;
+    case 5:
+        cin >> platform;
+        break;
+    }
 }
 
 Wall::Wall()
 {
-	form = new char[N];
-	value = 0;
+    form = new char[N];
+    value = 0;
 }
 
 Wall::~Wall()
 {
-	delete[] form;
+    delete[] form;
 }
 
 void  Wall::AddWall()
 {
-	cout << endl << "Ôîðìó ÷àñîâ: ";
-	cin >> form;
-	cout << endl << "Öåíó äåëåíèÿ öèôåðáëàòà: ";
-	cin >> value;
+    cout << endl << "Ð¤Ð¾Ñ€Ð¼Ñƒ Ñ‡Ð°ÑÐ¾Ð²: ";
+    cin >> form;
+    cout << endl << "Ð¦ÐµÐ½Ñƒ Ð´ÐµÐ»ÐµÐ½Ð¸Ñ Ñ†Ð¸Ñ„ÐµÑ€Ð±Ð»Ð°Ñ‚Ð°: ";
+    cin >> value;
 }
 
 void Wall::ShowWall()
 {
-	cout << " " << form << " " << value << endl << endl;
+    cout << " " << form << " " << value << endl << endl;
 }
 
 void Wall::EditWall(int temp)
 {
-	switch (temp)
-	{
-	case 6:
-		cin >> form;
-		break;
-	case 7:
-		cin >> value;
-		break;
-	}
+    switch (temp)
+    {
+    case 6:
+        cin >> form;
+        break;
+    case 7:
+        cin >> value;
+        break;
+    }
 }
 
 Wrist::Wrist()
 {
-	materialrem = new char[N];
-	water = 0;
+    materialrem = new char[N];
+    water = 0;
 }
 
 Wrist::	~Wrist()
 {
-	delete[] materialrem;
+    delete[] materialrem;
 }
 
 void Wrist::AddWrist()
 {
 
-	cout << endl << "Ìàòåðèàë ðåìåøêà: ";
-	cin >> materialrem;
-	cout << endl << "Âîäîçàùèòà (1 - Åñòü, 0 - Íåò): ";
-	cin >> water;
+    cout << endl << "ÐœÐ°Ñ‚ÐµÑ€Ð¸Ð°Ð» Ñ€ÐµÐ¼ÐµÑˆÐºÐ°: ";
+    cin >> materialrem;
+    cout << endl << "Ð’Ð¾Ð´Ð¾Ð·Ð°Ñ‰Ð¸Ñ‚Ð° (1 - Ð•ÑÑ‚ÑŒ, 0 - ÐÐµÑ‚): ";
+    cin >> water;
 }
 
 void Wrist::ShowWrist()
 {
-	cout << " " << materialrem << " " << water << endl << endl;
+    cout << " " << materialrem << " " << water << endl << endl;
 }
 
 void Wrist::EditWrist(int temp)
 {
-	switch (temp)
-	{
-	case 6:
-		cin >> materialrem;
-		break;
-	case 7:
-		cin >> water;
-		break;
-	}
+    switch (temp)
+    {
+    case 6:
+        cin >> materialrem;
+        break;
+    case 7:
+        cin >> water;
+        break;
+    }
 }

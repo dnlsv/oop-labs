@@ -7,7 +7,7 @@ using namespace std;
 template <class T>
 struct Spis2
 {
-	T data; // данные
+	T data; // РґР°РЅРЅС‹Рµ
 	Spis2<T>* next, * prev;
 };
 

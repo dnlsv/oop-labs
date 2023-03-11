@@ -9,67 +9,65 @@ const int N = 100;
 class Clock
 {
 protected:
-	char* producer; //производитель
-	char* material; //материал
-	int cost; //стоимость
+    char* producer; //РїСЂРѕРёР·РІРѕРґРёС‚РµР»СЊ
+    char* material; //РјР°С‚РµСЂРёР°Р»
+    int cost; //СЃС‚РѕРёРјРѕСЃС‚СЊ
 public:
-	Clock();
-	~Clock();
-	void AddClock();
-	void ShowClock(int);
-	void EditClock(int);
+    Clock();
+    ~Clock();
+    void AddClock();
+    void ShowClock(int);
+    void EditClock(int);
 };
 
 class Mechanical : public Clock
 {
 protected:
-	char* face; //тип циферблата
-	char* glass; //стекло
+    char* face; //С‚РёРї С†РёС„РµСЂР±Р»Р°С‚Р°
+    char* glass; //СЃС‚РµРєР»Рѕ
 public:
-	Mechanical();
-	~Mechanical();
-	void AddMechanical();
-	void ShowMechanical();
-	void EditMechanical(int);
+    Mechanical();
+    ~Mechanical();
+    void AddMechanical();
+    void ShowMechanical();
+    void EditMechanical(int);
 };
 
 class Electronic : public Clock
 {
 private:
-	char* type; //тип часов
-	char* platform; //платформа
+    char* type; //С‚РёРї С‡Р°СЃРѕРІ
+    char* platform; //РїР»Р°С‚С„РѕСЂРјР°
 public:
-	Electronic();
-	~Electronic();
-	void AddElectronic();
-	void ShowElectronic();
-	void EditElectronic(int);
+    Electronic();
+    ~Electronic();
+    void AddElectronic();
+    void ShowElectronic();
+    void EditElectronic(int);
 };
 
 class Wall : public Mechanical
 {
 private:
-	char* form; //форма
-	int value; //цена деления циферблата
+    char* form; //С„РѕСЂРјР°
+    int value; //С†РµРЅР° РґРµР»РµРЅРёСЏ С†РёС„РµСЂР±Р»Р°С‚Р°
 public:
-	Wall();
-	~Wall();
-	void AddWall();
-	void ShowWall();
-	void EditWall(int);
+    Wall();
+    ~Wall();
+    void AddWall();
+    void ShowWall();
+    void EditWall(int);
 };
 
 class Wrist : public Mechanical
 {
 private:
-	char* materialrem; //материал ремешка
-	bool water; //водозащита
+    char* materialrem; //РјР°С‚РµСЂРёР°Р» СЂРµРјРµС€РєР°
+    bool water; //РІРѕРґРѕР·Р°С‰РёС‚Р°
 public:
-	Wrist();
-	~Wrist();
-	void AddWrist();
-	void ShowWrist();
-	void EditWrist(int);
+    Wrist();
+    ~Wrist();
+    void AddWrist();
+    void ShowWrist();
+    void EditWrist(int);
 };
-
-
